@@ -29,6 +29,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-weight: var(--font-main-text-weight, 400); /* для совместимости */
   font-variation-settings: "wght" var(--font-main-text-weight, 400);
 }
 
@@ -168,6 +169,7 @@
   font-family: var(--font-main-family, "Inter", Arial, sans-serif);
   font-size: 18px;
   line-height: normal;
+  font-weight: var(--font-main-header-weight, 700);
   font-variation-settings: "wght" var(--font-main-header-weight, 700);
 }
 
@@ -229,6 +231,7 @@
   font-size: 18px;
   font-style: normal;
   line-height: 1.1667; /* 116.667% */
+  font-weight: var(--font-main-text-weight, 400);
   font-variation-settings: "wght" var(--font-main-text-weight, 400);
 }
 
