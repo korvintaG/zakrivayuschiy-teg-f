@@ -1,1 +1,20 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main-family: "Inter", Arial, sans-serif;
+  --font-main-text-weight: 400;
+  --font-main-header-weight: 700;
+  --font-accent-family: "PressStart2P", "Lucida Console", monospace;
+  --background-color: #fff;
+  --accent-color: #000;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 4px),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --section-width: calc((700 / 1440) * 100%);
+  --animation-button-color: var(--background-color);
+  --animation-fill-color: #ff0000;
+}

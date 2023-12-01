@@ -4,3 +4,53 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000;
+    --accent-color: #00cc14;
+    --font-main-text-weight: 465;
+    --font-main-header-weight: 785;
+    --background-image: repeating-linear-gradient(
+        90deg,
+        #000 0,
+        #000 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(#000, #000 2px, transparent 4px),
+      linear-gradient(#007f0c, #004306);
+    --animation-button-color: var(--accent-color);
+  }
+}
+
+:root.theme-light {
+  --background-color: #fff;
+  --accent-color: #000;
+  --font-main-text-weight: 400;
+  --font-main-header-weight: 700;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 4px),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --animation-button-color: var(--background-color);
+}
+
+:root.theme-dark {
+  --background-color: #000;
+  --accent-color: #00cc14;
+  --font-main-text-weight: 465;
+  --font-main-header-weight: 785;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #000 0,
+      #000 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(#000, #000 2px, transparent 4px),
+    linear-gradient(#007f0c, #004306);
+  --animation-button-color: var(--accent-color);
+}
