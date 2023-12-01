@@ -35,7 +35,7 @@
 
 .section {
   display: flex;
-  width: var(--section-width, calc((700 / 1440) * 100%));
+  inline-size: var(--section-width, calc((700 / 1440) * 100%));
   margin: 0 auto;
   border: 2px solid var(--accent-color, #000);
   background-color: var(--background-color, #fff);
@@ -86,8 +86,8 @@
 }
 
 .theme-menu {
-  padding-right: 3px;
-  padding-left: calc(
+  padding-inline-end: 3px;
+  padding-inline-start: calc(
     315px - 295px
   ); /* для центровки с учетом стрелки анимированной */
   padding-block-start: 22px;
@@ -121,15 +121,15 @@
   /* плавное подчеркивание */
   content: "";
   display: block;
-  width: 0%;
-  height: 2px;
+  inline-size: 0%;
+  block-size: 2px;
   opacity: 0.6;
   background-color: var(--accent-color, #000);
   transition: none;
 }
 
 .theme-menu__button:focus-visible::after {
-  width: 100%;
+  inline-size: 100%;
   background-color: var(--accent-color, #000);
   transition: width 0.3s, opacity 0.3s ease;
 }
@@ -145,7 +145,7 @@
   content: "▶";
   position: absolute;
   left: -1em;
-  margin-right: -8px;
+  margin-inline-end: -8px;
   color: currentColor;
   animation: current_item 0.5s ease-in-out infinite alternate;
 }
@@ -163,7 +163,7 @@
 }
 
 .article__header {
-  border-bottom: 2px solid currentColor;
+  border-block-end: 2px solid currentColor;
   padding: 5px 10px;
   color: var(--accent-color, #000);
   font-family: var(--font-main-family, "Inter", Arial, sans-serif);
@@ -175,15 +175,15 @@
 
 .article__image-container {
   position: relative;
-  padding-bottom: 0px;
+  padding-block-end: 0px;
   font-size: 0; /* чтобы браузер не лепил странных паддингов */
   aspect-ratio: 1/1;
 }
 
 .article__image {
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -225,8 +225,8 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
-  border-top: 2px solid currentColor;
-  padding: 25px 25px 26px 25px;
+  border-block-start: 2px solid currentColor;
+  padding: 25px;
   font-family: var(--font-main-family, "Inter", Arial, sans-serif);
   font-size: 18px;
   font-style: normal;
@@ -261,8 +261,8 @@
 }
 
 .like-icon {
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .core {
@@ -375,8 +375,8 @@
 .card__like-button {
   /* Кнопка  Like текстовая */
   display: flex;
-  width: 130px;
-  padding: 12px 0 11px 0;
+  inline-size: 130px;
+  padding: 11px 0 10px 0;
 }
 
 /* Блок футера */
@@ -401,8 +401,8 @@
 }
 
 .floppy {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 .floppy,
@@ -483,7 +483,7 @@
 
 .dialog__text {
   grid-area: header;
-  width: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
+  inline-size: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
   font-family: var(
     --font-accent-family,
     "PressStart2P",
@@ -506,8 +506,8 @@
 .dialog__floppy {
   flex-shrink: 0;
   grid-area: floppy;
-  width: 39px;
-  height: 39px;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 /* блок особых настроек для мобильного */
@@ -522,8 +522,8 @@
   }
 
   .floppy {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
   }
 
   .footer {
