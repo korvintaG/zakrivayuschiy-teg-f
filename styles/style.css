@@ -383,9 +383,7 @@
   align-items: center;
   row-gap: 30px;
   column-gap: 20px;
-  margin: 31px clamp(2.625rem, 2.8451rem + -0.939vw, 2rem)
-    clamp(2rem, 2.044rem + -0.1878vw, 1.875rem)
-    clamp(2.625rem, 2.8671rem + -1.0329vw, 1.9375rem);
+  margin: 30px; 
   padding: 0;
 }
 
@@ -433,6 +431,14 @@
   .floppy {
     inline-size: 28px;
     block-size: 28px;
+  }
+
+  .dialog__form {
+    margin: 30px 40px;
+  }
+
+  .dialog__text {
+    max-inline-size: 198px;
   }
 
   .footer {
