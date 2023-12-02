@@ -13,6 +13,113 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+/* анимация стрелки */
+.theme-menu__button:disabled::before {
+  animation: current_item 0.5s ease-in-out infinite alternate;
+}
+
+/* анимация плавного подчеркивания меню */
+.theme-menu__button::after {
+  /* плавное подчеркивание */
+  content: "";
+  display: block;
+  inline-size: 0%;
+  block-size: 2px;
+  opacity: 0.6;
+  background-color: var(--accent-color, #000);
+  transition: none;
+}
+
+.theme-menu__button:focus-visible::after {
+  inline-size: 100%;
+  background-color: var(--accent-color, #000);
+  transition: width 0.3s, opacity 0.3s ease;
+}
+
+/* анимация кнопки */
+.button__animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--animation-button-color, #fff);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+  transform-origin: 0 0;
+  mix-blend-mode: difference;
+}
+
+.button__animated:hover::before {
+  transform: translateX(0);
+}
+
+/* анимация сердечка */
+.core {
+  fill: var(--background-color, #fff);
+  transition: fill 0.3s 0.03s;
+}
+
+.contour {
+  fill: var(--accent-color, #000);
+  transition: fill 0.1s;
+}
+
+.main-body {
+  fill: var(--background-color, #fff);
+  transition: fill 0.3s;
+}
+
+.sparks {
+  fill: var(--background-color, #fff);
+}
+
+.like-icon:hover .core {
+  fill: currentColor;
+  transition: fill 0.3s;
+}
+
+.like-icon:hover .main-body {
+  fill: currentColor;
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s 0.05s;
+}
+
+/* вариант is_like */
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color, #ff0000);
+  transition: fill 0.3s 0.06s;
+}
+
+.like-icon.is-liked .heart path {
+  transform-origin: center;
+  animation: heart_pulse 0.3s 0.1s ease-in alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks_show 0.3s 0.3s ease-in alternate;
+}
+
+/* keyframes */
+
 @keyframes current_item {
   0% {
     left: -1em;
